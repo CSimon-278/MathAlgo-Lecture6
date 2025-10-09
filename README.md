@@ -39,7 +39,8 @@ The impulse response is defined as:
 
 ```matlab
 h_LP(n) = sin(wc*(n - M/2)) / (pi*(n - M/2));
-h_LP(M/2) = wc/pi;  % Special case to avoid division by zero```
+h_LP(M/2) = wc/pi;  % Special case to avoid division by zero
+```
 
 ## 📐 Parameters
 
@@ -47,3 +48,24 @@ h_LP(M/2) = wc/pi;  % Special case to avoid division by zero```
 - Cutoff frequency: `wc = 1` (radians)
 - Sample index: `n = 0:M`
 
+## 📊 Results
+
+For each filter order:
+- **Impulse Response**: stem plot of `h_LP(n)`
+- **Magnitude Response**: FFT of `h_LP(n)` over 1024 points
+
+A comparison figure shows both responses side-by-side for M = 20 and M = 64.
+
+## 🧠 Observations
+
+- Increasing the filter order **M** narrows the transition band and reduces ripple.
+- Longer impulse responses provide better frequency selectivity.
+- Higher M results in smoother and sharper magnitude response.
+- The impulse response becomes wider and more symmetric as M increases.
+
+## 📷 Screenshots
+
+Found the following images in the `figures/` folder:
+- `hLP_M20.png` → Impulse and magnitude for M = 20
+- `hLP_M64.png` → Impulse and magnitude for M = 64
+- `HLP_compare.png` → Combined comparison figure
